@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+  
   <h1>'My Favorite' MadLib Take 2</h1>
 
 <head>
-  <script src="script.js"></script>
+ 
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
@@ -14,7 +15,8 @@
 
 
   <form>
-     Noun: <input type="text" id="noun"> <br>
+     title: <input type="text" id="title"> <br>
+    Noun: <input type="text" id="noun"> <br>
      Noun: <input type="text" id="noun1"> <br>
      Adjective: <input type="text" id="adjective"> <br> 
      Adjective: <input type="text" id="adjective1"> <br> 
@@ -29,34 +31,25 @@
    </form>
   <br>
   <br>
-  <button type = "button" onclick = "MadLibTime!()">Madlib Time!</button>
+  <button type = "button" onclick = "MadLibTime()">Madlib Time!</button>
   <p id="output"></p>  
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCjSpMgWj9MDY7lSGdzQijhG6eyTul16m4",
-    authDomain: "madlibs2-23800.firebaseapp.com",
-    projectId: "madlibs2-23800",
-    storageBucket: "madlibs2-23800.appspot.com",
-    messagingSenderId: "651418363491",
-    appId: "1:651418363491:web:a973e41d3da75ef7a1ba56",
-    measurementId: "G-Y3M1HKXLL6"
-  };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-  <script src="script.js"></script>
+ <script src="script.js"></script>
 </body>
-
+<button id= "saveButton" onclick="saveMadLib()">
+  Save your MadLib story
+</button>
+  <button id= "Findyourexistingstory" onclick="Findyourexistingstory()">
+    Find your existing story
+  </button>
+  <button id= "Edityourexistingstory" onclick="Edityourexistingstory()">
+    Edit your existing story
+  </button>
+  <button id= "Deleteyourexistingstory" onclick="Deleteyourexistingstory()">
+    Delete your existing story
+  </button>
+  
 </html>
 
 
