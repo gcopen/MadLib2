@@ -1,20 +1,24 @@
-  const firebaseConfig = {
-    	apiKey: "AIzaSyBKPb7V2xsGrZvd2hXp2Enuj1haTEIoLi4",
-    	authDomain: "madlibs-bb9af.firebaseapp.com",
-    	projectId: "madlibs-bb9af",
-    	storageBucket: "madlibs-bb9af.appspot.com",
-    	messagingSenderId: "622424206247",
-    	appId: "1:622424206247:web:2939814263e699eeb86482",
-};
+ const firebaseConfig = {
+    apiKey: "AIzaSyCobHwYiVCGNTmiwbCMyxLR6JNIcybvpHg",
+    authDomain: "madlibs-final.firebaseapp.com",
+    projectId: "madlibs-final",
+    storageBucket: "madlibs-final.appspot.com",
+    messagingSenderId: "795638895257",
+    appId: "1:795638895257:web:724d32a595006c68251e08",
+    measurementId: "G-SZLZ6YEH4L"
+  };
 
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 console.log("firebase setup complete!");
 
-
-db.collection(collectionName).doc(docName).set(data);
+collectionName = "test runs";
+docName = "test run4";
+data = { myName: "Dan Stille", class: "Web Development" };
+/*db.collection(collectionName).doc(docName).set(data);
 console.log("data: " + data);
 alert(docName + " saved to database!!");
+*/
 function MadLibTime() {
   var noun = document.getElementById("noun").value;
   var noun1 = document.getElementById("noun1").value;
@@ -49,9 +53,10 @@ var storyData = {
   storyName: title
   
   };
+  // next, save data in JSON format (easy to share + print to console)
+  var storyJSON = JSON.stringify(storyData);
+  console.log("storyJSON: " + storyJSON);
 
-//var storyData = DATA.stringify(storyData);
-console.log("storyData: " + storyData);
 return storyData;
 }
 
@@ -59,6 +64,7 @@ function saveMadLib() {
     console.log("SaveMadLib()called");
     var storyData = MadLibTime();
     db.collection("MadLibs2").doc(storyData.storyName).set(storyData); 
+
     alert(storyData.storyName + "saved to database!");
       }
   
